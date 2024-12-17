@@ -16,7 +16,7 @@ EOF
 WORKDIR /directus
 
 COPY package.json .
-RUN npm install -g yarn
+RUN corepack enable && corepack prepare
 
 # Deploy as 'node' user to match pnpm setups in production image
 # (see https://github.com/directus/directus/issues/23822)
